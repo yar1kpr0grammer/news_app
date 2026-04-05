@@ -8,7 +8,7 @@ import { NewsList } from "@/components/news/NewsList";
 import { NewsSkeleton } from "@/components/news/NewsSkeleton";
 import { useFavorites } from "@/hooks/useFavorites";
 
-export default function Page() {
+export default function HomeClient() {
   const [query, setQuery] = useState("");
   const [articles, setArticles] = useState<Article[]>([]);
   const [loading, setLoading] = useState(false);
@@ -38,7 +38,11 @@ export default function Page() {
       {loading ? (
         <NewsSkeleton />
       ) : (
-        <NewsList articles={articles} onSave={add} isFavorite={isFavorite} />
+        <NewsList
+          articles={articles}
+          onSave={add}
+          isFavorite={isFavorite} // ✅ ВОТ ЭТО ГЛАВНОЕ
+        />
       )}
     </main>
   );
