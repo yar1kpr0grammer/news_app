@@ -12,7 +12,7 @@ export default function FavoritesPage() {
       {favorites.length === 0 && <p>No favorites yet</p>}
 
       {favorites.map((a) => (
-        <div key={a.url} className="border p-3 mb-2 flex flex-row">
+        <div key={a.url} className="border p-3 mb-2 flex flex-row justify-between">
           <a href={a.url} target="_blank">
             {a.title}
           </a>
